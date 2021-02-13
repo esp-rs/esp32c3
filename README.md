@@ -1,7 +1,8 @@
 # esp32c3
 
 [![Build Status](https://travis-ci.com/esp-rs/esp32c3.svg?branch=master)](https://travis-ci.com/esp-rs/esp32c3)
-![crates.io](https://img.shields.io/crates/v/esp32c3.svg)
+[![crates.io](https://img.shields.io/crates/v/esp32c3.svg)](https://crates.io/crates/esp32c3)
+
 
 A peripheral access crate the ESP32-C3. See the [`svd2rust repo`](https://github.com/rust-embedded/svd2rust) for more infomation on how to use this crate. Espressif do not provide an SVD for the esp32, so the svd used in this project has been generated from the C header documentation via the [idf2svd tool](https://github.com/imheresamir/idf2svd).
 
