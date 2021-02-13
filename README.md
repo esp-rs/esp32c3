@@ -1,4 +1,4 @@
-# esp32
+# esp32c3
 
 [![Build Status](https://travis-ci.com/esp-rs/esp32c3.svg?branch=master)](https://travis-ci.com/esp-rs/esp32c3)
 ![crates.io](https://img.shields.io/crates/v/esp32c3.svg)
