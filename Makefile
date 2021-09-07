@@ -1,20 +1,10 @@
-OUTPUT=esp32c3.svd
-BASE=esp32c3.base.svd
-
-all: clean patch generate form fmt build
-
-codegen: clean generate form fmt build
+all: clean generate form fmt build
 
 clean:
 	rm -rf src/
 
-patch:
-	rm -f svd/$(OUTPUT)
-	svd patch svd/patches/esp32c3.yaml
-	mv svd/$(BASE).patched svd/$(OUTPUT)
-
 generate:
-	svd2rust --target riscv -i svd/$(OUTPUT)
+	svd2rust --target riscv -i svd/esp32c3.svd
 
 form:
 	form -i lib.rs -o src/
