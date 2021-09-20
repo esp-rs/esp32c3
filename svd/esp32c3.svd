@@ -26,7 +26,7 @@
     <revision>r0p0</revision>
     <endian>little</endian>
     <mpuPresent>false</mpuPresent>
-    <fpuPresent>true</fpuPresent>
+    <fpuPresent>false</fpuPresent>
     <nvicPrioBits>4</nvicPrioBits>
     <vendorSystickConfig>false</vendorSystickConfig>
   </cpu>
@@ -38,6 +38,7 @@
     <peripheral>
       <name>AES</name>
       <description>Peripheral AES</description>
+      <groupName>AES</groupName>
       <baseAddress>0x6003a000</baseAddress>
       <registers>
         <register>
@@ -509,6 +510,7 @@
     <peripheral>
       <name>APB_CTRL</name>
       <description>Peripheral APB_CTRL</description>
+      <groupName>APB_CTRL</groupName>
       <baseAddress>0x60026000</baseAddress>
       <registers>
         <register>
@@ -969,8 +971,8 @@
           </fields>
         </register>
         <register>
-          <name>REDCY_SIG0_REG</name>
-          <description>APB_CTRL_REDCY_SIG0_REG_REG</description>
+          <name>REDCY_SIG0</name>
+          <description>APB_CTRL_REDCY_SIG0_REG</description>
           <addressOffset>0x94</addressOffset>
           <size>32</size>
           <fields>
@@ -990,8 +992,8 @@
           </fields>
         </register>
         <register>
-          <name>REDCY_SIG1_REG</name>
-          <description>APB_CTRL_REDCY_SIG1_REG_REG</description>
+          <name>REDCY_SIG1</name>
+          <description>APB_CTRL_REDCY_SIG1_REG</description>
           <addressOffset>0x98</addressOffset>
           <size>32</size>
           <fields>
@@ -1153,8 +1155,8 @@
           </fields>
         </register>
         <register>
-          <name>PERI_BACKUP_CONFIG_REG</name>
-          <description>APB_CTRL_PERI_BACKUP_CONFIG_REG_REG</description>
+          <name>PERI_BACKUP_CONFIG</name>
+          <description>APB_CTRL_PERI_BACKUP_CONFIG_REG</description>
           <addressOffset>0xb4</addressOffset>
           <size>32</size>
           <resetValue>0x6480</resetValue>
@@ -1206,8 +1208,8 @@
           </fields>
         </register>
         <register>
-          <name>PERI_BACKUP_APB_ADDR_REG</name>
-          <description>APB_CTRL_PERI_BACKUP_APB_ADDR_REG_REG</description>
+          <name>PERI_BACKUP_APB_ADDR</name>
+          <description>APB_CTRL_PERI_BACKUP_APB_ADDR_REG</description>
           <addressOffset>0xb8</addressOffset>
           <size>32</size>
           <fields>
@@ -1220,8 +1222,8 @@
           </fields>
         </register>
         <register>
-          <name>PERI_BACKUP_MEM_ADDR_REG</name>
-          <description>APB_CTRL_PERI_BACKUP_MEM_ADDR_REG_REG</description>
+          <name>PERI_BACKUP_MEM_ADDR</name>
+          <description>APB_CTRL_PERI_BACKUP_MEM_ADDR_REG</description>
           <addressOffset>0xbc</addressOffset>
           <size>32</size>
           <fields>
@@ -1339,6 +1341,7 @@
     <peripheral>
       <name>APB_SARADC</name>
       <description>Peripheral APB_SARADC</description>
+      <groupName>APB_SARADC</groupName>
       <baseAddress>0x60040000</baseAddress>
       <registers>
         <register>
@@ -2143,6 +2146,7 @@
     <peripheral>
       <name>ASSIST_DEBUG</name>
       <description>Peripheral ASSIST_DEBUG</description>
+      <groupName>ASSIST_DEBUG</groupName>
       <baseAddress>0x600ce000</baseAddress>
       <registers>
         <register>
@@ -3099,6 +3103,7 @@
     <peripheral>
       <name>DMA</name>
       <description>Peripheral DMA</description>
+      <groupName>DMA</groupName>
       <baseAddress>0x6003f000</baseAddress>
       <registers>
         <register>
@@ -6224,6 +6229,7 @@
     <peripheral>
       <name>DS</name>
       <description>Peripheral DS</description>
+      <groupName>DS</groupName>
       <baseAddress>0x6003d000</baseAddress>
       <registers>
         <register>
@@ -6379,6 +6385,7 @@
     <peripheral>
       <name>EFUSE</name>
       <description>Peripheral EFUSE</description>
+      <groupName>EFUSE</groupName>
       <baseAddress>0x60008800</baseAddress>
       <registers>
         <register>
@@ -9019,8 +9026,1393 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>EXTMEM</name>
+      <description>Peripheral EXTMEM</description>
+      <groupName>EXTMEM</groupName>
+      <baseAddress>0x600c4000</baseAddress>
+      <registers>
+        <register>
+          <name>ICACHE_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x0</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_ENABLE</name>
+              <description>The bit is used to activate the data cache. 0: disable, 1: enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_CTRL1</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x4</addressOffset>
+          <size>32</size>
+          <resetValue>0x3</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_SHUT_IBUS</name>
+              <description>The bit is used to disable core0 ibus, 0: enable, 1: disable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_SHUT_DBUS</name>
+              <description>The bit is used to disable core1 ibus, 0: enable, 1: disable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_TAG_POWER_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x8</addressOffset>
+          <size>32</size>
+          <resetValue>0x5</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_TAG_MEM_FORCE_ON</name>
+              <description>The bit is used to close clock gating of  icache tag memory. 1: close gating, 0: open clock gating.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_TAG_MEM_FORCE_PD</name>
+              <description>The bit is used to power  icache tag memory down, 0: follow rtc_lslp, 1: power down</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_TAG_MEM_FORCE_PU</name>
+              <description>The bit is used to power  icache tag memory up, 0: follow rtc_lslp, 1: power up</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOCK_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xc</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOCK_SCT0_EN</name>
+              <description>The bit is used to enable the first section of prelock function.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_PRELOCK_SCT1_EN</name>
+              <description>The bit is used to enable the second section of prelock function.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOCK_SCT0_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x10</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOCK_SCT0_ADDR</name>
+              <description>The bits are used to configure the first start virtual address of data prelock, which is combined with ICACHE_PRELOCK_SCT0_SIZE_REG</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOCK_SCT1_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x14</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOCK_SCT1_ADDR</name>
+              <description>The bits are used to configure the second start virtual address of data prelock, which is combined with ICACHE_PRELOCK_SCT1_SIZE_REG</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOCK_SCT_SIZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x18</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOCK_SCT1_SIZE</name>
+              <description>The bits are used to configure the second length of data locking, which is combined with ICACHE_PRELOCK_SCT1_ADDR_REG</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_PRELOCK_SCT0_SIZE</name>
+              <description>The bits are used to configure the first length of data locking, which is combined with ICACHE_PRELOCK_SCT0_ADDR_REG</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_LOCK_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x1c</addressOffset>
+          <size>32</size>
+          <resetValue>0x4</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_LOCK_ENA</name>
+              <description>The bit is used to enable lock operation. It will be cleared by hardware after lock operation done.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_UNLOCK_ENA</name>
+              <description>The bit is used to enable unlock operation. It will be cleared by hardware after unlock operation done.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_LOCK_DONE</name>
+              <description>The bit is used to indicate unlock/lock operation is finished.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_LOCK_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x20</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_LOCK_ADDR</name>
+              <description>The bits are used to configure the start virtual address for lock operations. It should be combined with ICACHE_LOCK_SIZE_REG.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_LOCK_SIZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x24</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_LOCK_SIZE</name>
+              <description>The bits are used to configure the length for lock operations. The bits are the counts of cache block. It should be combined with ICACHE_LOCK_ADDR_REG.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_SYNC_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x28</addressOffset>
+          <size>32</size>
+          <resetValue>0x1</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_INVALIDATE_ENA</name>
+              <description>The bit is used to enable invalidate operation. It will be cleared by hardware after invalidate operation done.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_SYNC_DONE</name>
+              <description>The bit is used to indicate invalidate operation is finished.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_SYNC_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x2c</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_SYNC_ADDR</name>
+              <description>The bits are used to configure the start virtual address for clean operations. It should be combined with ICACHE_SYNC_SIZE_REG.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_SYNC_SIZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x30</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_SYNC_SIZE</name>
+              <description>The bits are used to configure the length for sync operations. The bits are the counts of cache block. It should be combined with ICACHE_SYNC_ADDR_REG.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>23</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOAD_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x34</addressOffset>
+          <size>32</size>
+          <resetValue>0x2</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOAD_ENA</name>
+              <description>The bit is used to enable preload operation. It will be cleared by hardware after preload operation done.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_DONE</name>
+              <description>The bit is used to indicate preload operation is finished.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_ORDER</name>
+              <description>The bit is used to configure the direction of preload operation. 1: descending, 0: ascending.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOAD_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x38</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOAD_ADDR</name>
+              <description>The bits are used to configure the start virtual address for preload operation. It should be combined with ICACHE_PRELOAD_SIZE_REG.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_PRELOAD_SIZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x3c</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOAD_SIZE</name>
+              <description>The bits are used to configure the length for preload operation. The bits are the counts of cache block. It should be combined with ICACHE_PRELOAD_ADDR_REG..</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_AUTOLOAD_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x40</addressOffset>
+          <size>32</size>
+          <resetValue>0x8</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_AUTOLOAD_SCT0_ENA</name>
+              <description>The bits are used to enable the first section for autoload operation.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_AUTOLOAD_SCT1_ENA</name>
+              <description>The bits are used to enable the second section for autoload operation.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_AUTOLOAD_ENA</name>
+              <description>The bit is used to enable and disable autoload operation. It is combined with icache_autoload_done. 1: enable, 0: disable.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_AUTOLOAD_DONE</name>
+              <description>The bit is used to indicate autoload operation is finished.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ICACHE_AUTOLOAD_ORDER</name>
+              <description>The bits are used to configure the direction of autoload. 1: descending, 0: ascending.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_AUTOLOAD_RQST</name>
+              <description>The bits are used to configure trigger conditions for autoload. 0/3: cache miss, 1: cache hit, 2: both cache miss and hit.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_AUTOLOAD_SCT0_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x44</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_AUTOLOAD_SCT0_ADDR</name>
+              <description>The bits are used to configure the start virtual address of the first section for autoload operation. It should be combined with icache_autoload_sct0_ena.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_AUTOLOAD_SCT0_SIZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x48</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_AUTOLOAD_SCT0_SIZE</name>
+              <description>The bits are used to configure the length of the first section for autoload operation. It should be combined with icache_autoload_sct0_ena.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>27</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_AUTOLOAD_SCT1_ADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x4c</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_AUTOLOAD_SCT1_ADDR</name>
+              <description>The bits are used to configure the start virtual address of the second section for autoload operation. It should be combined with icache_autoload_sct1_ena.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_AUTOLOAD_SCT1_SIZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x50</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_AUTOLOAD_SCT1_SIZE</name>
+              <description>The bits are used to configure the length of the second section for autoload operation. It should be combined with icache_autoload_sct1_ena.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>27</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_TO_FLASH_START_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x54</addressOffset>
+          <size>32</size>
+          <resetValue>0x42000000</resetValue>
+          <fields>
+            <field>
+              <name>IBUS_TO_FLASH_START_VADDR</name>
+              <description>The bits are used to configure the start virtual address of ibus to access flash. The register is used to give constraints to ibus access counter.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_TO_FLASH_END_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x58</addressOffset>
+          <size>32</size>
+          <resetValue>0x427fffff</resetValue>
+          <fields>
+            <field>
+              <name>IBUS_TO_FLASH_END_VADDR</name>
+              <description>The bits are used to configure the end virtual address of ibus to access flash. The register is used to give constraints to ibus access counter.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_TO_FLASH_START_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x5c</addressOffset>
+          <size>32</size>
+          <resetValue>0x3c000000</resetValue>
+          <fields>
+            <field>
+              <name>DBUS_TO_FLASH_START_VADDR</name>
+              <description>The bits are used to configure the start virtual address of dbus to access flash. The register is used to give constraints to dbus access counter.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_TO_FLASH_END_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x60</addressOffset>
+          <size>32</size>
+          <resetValue>0x3c7fffff</resetValue>
+          <fields>
+            <field>
+              <name>DBUS_TO_FLASH_END_VADDR</name>
+              <description>The bits are used to configure the end virtual address of dbus to access flash. The register is used to give constraints to dbus access counter.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_ACS_CNT_CLR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x64</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>IBUS_ACS_CNT_CLR</name>
+              <description>The bit is used to clear ibus counter.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>DBUS_ACS_CNT_CLR</name>
+              <description>The bit is used to clear dbus counter.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_ACS_MISS_CNT</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x68</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>IBUS_ACS_MISS_CNT</name>
+              <description>The bits are used to count the number of the cache miss caused by ibus access flash.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_ACS_CNT</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x6c</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>IBUS_ACS_CNT</name>
+              <description>The bits are used to count the number of ibus access flash through icache.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_ACS_FLASH_MISS_CNT</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x70</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>DBUS_ACS_FLASH_MISS_CNT</name>
+              <description>The bits are used to count the number of the cache miss caused by dbus access flash.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_ACS_CNT</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x74</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>DBUS_ACS_CNT</name>
+              <description>The bits are used to count the number of dbus access flash through icache.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_ILG_INT_ENA</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x78</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_SYNC_OP_FAULT_INT_ENA</name>
+              <description>The bit is used to enable interrupt by sync configurations fault.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_OP_FAULT_INT_ENA</name>
+              <description>The bit is used to enable interrupt by preload configurations fault.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>MMU_ENTRY_FAULT_INT_ENA</name>
+              <description>The bit is used to enable interrupt by mmu entry fault.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>IBUS_CNT_OVF_INT_ENA</name>
+              <description>The bit is used to enable interrupt by ibus counter overflow.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DBUS_CNT_OVF_INT_ENA</name>
+              <description>The bit is used to enable interrupt by dbus counter overflow.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_ILG_INT_CLR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x7c</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_SYNC_OP_FAULT_INT_CLR</name>
+              <description>The bit is used to clear interrupt by sync configurations fault.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_OP_FAULT_INT_CLR</name>
+              <description>The bit is used to clear interrupt by preload configurations fault.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>MMU_ENTRY_FAULT_INT_CLR</name>
+              <description>The bit is used to clear interrupt by mmu entry fault.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>IBUS_CNT_OVF_INT_CLR</name>
+              <description>The bit is used to clear interrupt by ibus counter overflow.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>DBUS_CNT_OVF_INT_CLR</name>
+              <description>The bit is used to clear interrupt by dbus counter overflow.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_ILG_INT_ST</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x80</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_SYNC_OP_FAULT_ST</name>
+              <description>The bit is used to indicate interrupt by sync configurations fault.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_OP_FAULT_ST</name>
+              <description>The bit is used to indicate interrupt by preload configurations fault.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>MMU_ENTRY_FAULT_ST</name>
+              <description>The bit is used to indicate interrupt by mmu entry fault.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>IBUS_ACS_CNT_OVF_ST</name>
+              <description>The bit is used to indicate interrupt by ibus access flash/spiram counter overflow.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>IBUS_ACS_MISS_CNT_OVF_ST</name>
+              <description>The bit is used to indicate interrupt by ibus access flash/spiram miss counter overflow.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>DBUS_ACS_CNT_OVF_ST</name>
+              <description>The bit is used to indicate interrupt by dbus access flash/spiram counter overflow.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>DBUS_ACS_FLASH_MISS_CNT_OVF_ST</name>
+              <description>The bit is used to indicate interrupt by dbus access flash miss counter overflow.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_ACS_CACHE_INT_ENA</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x84</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CORE0_IBUS_ACS_MSK_IC_INT_ENA</name>
+              <description>The bit is used to enable interrupt by cpu access icache while the corresponding ibus is disabled which include speculative access.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CORE0_IBUS_WR_IC_INT_ENA</name>
+              <description>The bit is used to enable interrupt by ibus trying to write icache</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CORE0_IBUS_REJECT_INT_ENA</name>
+              <description>The bit is used to enable interrupt by authentication fail.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CORE0_DBUS_ACS_MSK_IC_INT_ENA</name>
+              <description>The bit is used to enable interrupt by cpu access icache while the corresponding dbus is disabled which include speculative access.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CORE0_DBUS_REJECT_INT_ENA</name>
+              <description>The bit is used to enable interrupt by authentication fail.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CORE0_DBUS_WR_IC_INT_ENA</name>
+              <description>The bit is used to enable interrupt by dbus trying to write icache</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_ACS_CACHE_INT_CLR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x88</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CORE0_IBUS_ACS_MSK_IC_INT_CLR</name>
+              <description>The bit is used to clear interrupt by cpu access icache while the corresponding ibus is disabled or icache is disabled which include speculative access.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CORE0_IBUS_WR_IC_INT_CLR</name>
+              <description>The bit is used to clear interrupt by ibus trying to write icache</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CORE0_IBUS_REJECT_INT_CLR</name>
+              <description>The bit is used to clear interrupt by authentication fail.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_ACS_MSK_IC_INT_CLR</name>
+              <description>The bit is used to clear interrupt by cpu access icache while the corresponding dbus is disabled or icache is disabled which include speculative access.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_REJECT_INT_CLR</name>
+              <description>The bit is used to clear interrupt by authentication fail.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_WR_IC_INT_CLR</name>
+              <description>The bit is used to clear interrupt by dbus trying to write icache</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_ACS_CACHE_INT_ST</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x8c</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CORE0_IBUS_ACS_MSK_ICACHE_ST</name>
+              <description>The bit is used to indicate interrupt by cpu access  icache while the core0_ibus is disabled or icache is disabled which include speculative access.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_IBUS_WR_ICACHE_ST</name>
+              <description>The bit is used to indicate interrupt by ibus trying to write icache</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_IBUS_REJECT_ST</name>
+              <description>The bit is used to indicate interrupt by authentication fail.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_ACS_MSK_ICACHE_ST</name>
+              <description>The bit is used to indicate interrupt by cpu access icache while the core0_dbus is disabled or icache is disabled which include speculative access.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_REJECT_ST</name>
+              <description>The bit is used to indicate interrupt by authentication fail.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_WR_ICACHE_ST</name>
+              <description>The bit is used to indicate interrupt by dbus trying to write icache</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_DBUS_REJECT_ST</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x90</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CORE0_DBUS_ATTR</name>
+              <description>The bits are used to indicate the attribute of CPU access dbus when authentication fail. 0: invalidate, 1: execute-able, 2: read-able, 4: write-able.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_DBUS_WORLD</name>
+              <description>The bit is used to indicate the world of CPU access dbus when authentication fail. 0: WORLD0, 1: WORLD1</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_DBUS_REJECT_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x94</addressOffset>
+          <size>32</size>
+          <resetValue>0xffffffff</resetValue>
+          <fields>
+            <field>
+              <name>CORE0_DBUS_VADDR</name>
+              <description>The bits are used to indicate the virtual address of CPU access dbus when authentication fail.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_IBUS_REJECT_ST</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x98</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CORE0_IBUS_ATTR</name>
+              <description>The bits are used to indicate the attribute of CPU access ibus when authentication fail. 0: invalidate, 1: execute-able, 2: read-able</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CORE0_IBUS_WORLD</name>
+              <description>The bit is used to indicate the world of CPU access ibus when authentication fail. 0: WORLD0, 1: WORLD1</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CORE0_IBUS_REJECT_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x9c</addressOffset>
+          <size>32</size>
+          <resetValue>0xffffffff</resetValue>
+          <fields>
+            <field>
+              <name>CORE0_IBUS_VADDR</name>
+              <description>The bits are used to indicate the virtual address of CPU access  ibus when authentication fail.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_MMU_FAULT_CONTENT</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xa0</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CACHE_MMU_FAULT_CONTENT</name>
+              <description>The bits are used to indicate the content of mmu entry which cause mmu fault..</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CACHE_MMU_FAULT_CODE</name>
+              <description>The right-most 3 bits are used to indicate the operations which cause mmu fault occurrence. 0: default, 1: cpu miss, 2: preload miss, 3: writeback, 4: cpu miss evict recovery address, 5: load miss evict recovery address, 6: external dma tx, 7: external dma rx. The most significant bit is used to indicate this operation occurs in which one icache.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_MMU_FAULT_VADDR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xa4</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CACHE_MMU_FAULT_VADDR</name>
+              <description>The bits are used to indicate the virtual address which cause mmu fault..</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_WRAP_AROUND_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xa8</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CACHE_FLASH_WRAP_AROUND</name>
+              <description>The bit is used to enable wrap around mode when read data from flash.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_MMU_POWER_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xac</addressOffset>
+          <size>32</size>
+          <resetValue>0x5</resetValue>
+          <fields>
+            <field>
+              <name>CACHE_MMU_MEM_FORCE_ON</name>
+              <description>The bit is used to enable clock gating to save power when access mmu memory, 0: enable, 1: disable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CACHE_MMU_MEM_FORCE_PD</name>
+              <description>The bit is used to power mmu memory down, 0: follow_rtc_lslp_pd, 1: power down</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CACHE_MMU_MEM_FORCE_PU</name>
+              <description>The bit is used to power mmu memory down, 0: follow_rtc_lslp_pd, 1: power up</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_STATE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xb0</addressOffset>
+          <size>32</size>
+          <resetValue>0x1</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_STATE</name>
+              <description>The bit is used to indicate whether  icache main fsm is in idle state or not. 1: in idle state,  0: not in idle state</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_ENCRYPT_DECRYPT_RECORD_DISABLE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xb4</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>RECORD_DISABLE_DB_ENCRYPT</name>
+              <description>Reserved.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>RECORD_DISABLE_G0CB_DECRYPT</name>
+              <description>Reserved.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_ENCRYPT_DECRYPT_CLK_FORCE_ON</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xb8</addressOffset>
+          <size>32</size>
+          <resetValue>0x7</resetValue>
+          <fields>
+            <field>
+              <name>CLK_FORCE_ON_MANUAL_CRYPT</name>
+              <description>The bit is used to close clock gating of manual crypt clock. 1: close gating, 0: open clock gating.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CLK_FORCE_ON_AUTO_CRYPT</name>
+              <description>The bit is used to close clock gating of automatic crypt clock. 1: close gating, 0: open clock gating.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CLK_FORCE_ON_CRYPT</name>
+              <description>The bit is used to close clock gating of external memory encrypt and decrypt clock. 1: close gating, 0: open clock gating.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_PRELOAD_INT_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xbc</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_PRELOAD_INT_ST</name>
+              <description>The bit is used to indicate the interrupt by  icache pre-load done.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_INT_ENA</name>
+              <description>The bit is used to enable the interrupt by  icache pre-load done.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_PRELOAD_INT_CLR</name>
+              <description>The bit is used to clear the interrupt by  icache pre-load done.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_SYNC_INT_CTRL</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xc0</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ICACHE_SYNC_INT_ST</name>
+              <description>The bit is used to indicate the interrupt by  icache sync done.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ICACHE_SYNC_INT_ENA</name>
+              <description>The bit is used to enable the interrupt by  icache sync done.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ICACHE_SYNC_INT_CLR</name>
+              <description>The bit is used to clear the interrupt by  icache sync done.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_MMU_OWNER</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xc4</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>CACHE_MMU_OWNER</name>
+              <description>The bits are used to specify the owner of MMU.bit0/bit2: ibus, bit1/bit3: dbus</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_CONF_MISC</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xc8</addressOffset>
+          <size>32</size>
+          <resetValue>0x7</resetValue>
+          <fields>
+            <field>
+              <name>CACHE_IGNORE_PRELOAD_MMU_ENTRY_FAULT</name>
+              <description>The bit is used to disable checking mmu entry fault by preload operation.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CACHE_IGNORE_SYNC_MMU_ENTRY_FAULT</name>
+              <description>The bit is used to disable checking mmu entry fault by sync operation.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CACHE_TRACE_ENA</name>
+              <description>The bit is used to enable cache trace function.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_FREEZE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xcc</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>ENA</name>
+              <description>The bit is used to enable icache freeze mode</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>MODE</name>
+              <description>The bit is used to configure freeze mode, 0:  assert busy if CPU miss 1: assert hit if CPU miss</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DONE</name>
+              <description>The bit is used to indicate icache freeze success</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ICACHE_ATOMIC_OPERATE_ENA</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xd0</addressOffset>
+          <size>32</size>
+          <resetValue>0x1</resetValue>
+          <fields>
+            <field>
+              <name>ICACHE_ATOMIC_OPERATE_ENA</name>
+              <description>The bit is used to activate icache atomic operation protection. In this case, sync/lock operation can not interrupt miss-work. This feature does not work during invalidateAll operation.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CACHE_REQUEST</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xd4</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>BYPASS</name>
+              <description>The bit is used to disable request recording which could cause performance issue</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_PMS_TBL_LOCK</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xd8</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>IBUS_PMS_LOCK</name>
+              <description>The bit is used to configure the ibus permission control section boundary0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_PMS_TBL_BOUNDARY0</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xdc</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>IBUS_PMS_BOUNDARY0</name>
+              <description>The bit is used to configure the ibus permission control section boundary0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_PMS_TBL_BOUNDARY1</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xe0</addressOffset>
+          <size>32</size>
+          <resetValue>0x800</resetValue>
+          <fields>
+            <field>
+              <name>IBUS_PMS_BOUNDARY1</name>
+              <description>The bit is used to configure the ibus permission control section boundary1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_PMS_TBL_BOUNDARY2</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xe4</addressOffset>
+          <size>32</size>
+          <resetValue>0x800</resetValue>
+          <fields>
+            <field>
+              <name>IBUS_PMS_BOUNDARY2</name>
+              <description>The bit is used to configure the ibus permission control section boundary2</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IBUS_PMS_TBL_ATTR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xe8</addressOffset>
+          <size>32</size>
+          <resetValue>0xff</resetValue>
+          <fields>
+            <field>
+              <name>IBUS_PMS_SCT1_ATTR</name>
+              <description>The bit is used to configure attribute of the ibus permission control section1, bit0: fetch in world0, bit1: load in world0, bit2: fetch in world1, bit3: load in world1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>IBUS_PMS_SCT2_ATTR</name>
+              <description>The bit is used to configure attribute of the ibus permission control section2, bit0: fetch in world0, bit1: load in world0, bit2: fetch in world1, bit3: load in world1</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_PMS_TBL_LOCK</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xec</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>DBUS_PMS_LOCK</name>
+              <description>The bit is used to configure the ibus permission control section boundary0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_PMS_TBL_BOUNDARY0</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xf0</addressOffset>
+          <size>32</size>
+          <fields>
+            <field>
+              <name>DBUS_PMS_BOUNDARY0</name>
+              <description>The bit is used to configure the dbus permission control section boundary0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_PMS_TBL_BOUNDARY1</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xf4</addressOffset>
+          <size>32</size>
+          <resetValue>0x800</resetValue>
+          <fields>
+            <field>
+              <name>DBUS_PMS_BOUNDARY1</name>
+              <description>The bit is used to configure the dbus permission control section boundary1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_PMS_TBL_BOUNDARY2</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xf8</addressOffset>
+          <size>32</size>
+          <resetValue>0x800</resetValue>
+          <fields>
+            <field>
+              <name>DBUS_PMS_BOUNDARY2</name>
+              <description>The bit is used to configure the dbus permission control section boundary2</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DBUS_PMS_TBL_ATTR</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0xfc</addressOffset>
+          <size>32</size>
+          <resetValue>0xf</resetValue>
+          <fields>
+            <field>
+              <name>DBUS_PMS_SCT1_ATTR</name>
+              <description>The bit is used to configure attribute of the dbus permission control section1, bit0: load in world0, bit2: load in world1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>DBUS_PMS_SCT2_ATTR</name>
+              <description>The bit is used to configure attribute of the dbus permission control section2, bit0: load in world0, bit2: load in world1</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CLOCK_GATE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x100</addressOffset>
+          <size>32</size>
+          <resetValue>0x1</resetValue>
+          <fields>
+            <field>
+              <name>CLK_EN</name>
+              <description>clock gate enable.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>REG_DATE</name>
+          <description>This description will be updated in the near future.</description>
+          <addressOffset>0x3fc</addressOffset>
+          <size>32</size>
+          <resetValue>0x2007160</resetValue>
+          <fields>
+            <field>
+              <name>DATE</name>
+              <description>version information</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>28</bitWidth>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
       <name>GPIO</name>
       <description>Peripheral GPIO</description>
+      <groupName>GPIO</groupName>
       <baseAddress>0x60004000</baseAddress>
       <registers>
         <register>
@@ -9392,7 +10784,7 @@
           </fields>
         </register>
         <register>
-          <name>CLOCK_GATE_REG</name>
+          <name>CLOCK_GATE</name>
           <description>GPIO clock gate register</description>
           <addressOffset>0x62c</addressOffset>
           <size>32</size>
@@ -9407,7 +10799,7 @@
           </fields>
         </register>
         <register>
-          <name>REG_DATE_REG</name>
+          <name>REG_DATE</name>
           <description>GPIO version register</description>
           <addressOffset>0x6fc</addressOffset>
           <size>32</size>
@@ -9426,6 +10818,7 @@
     <peripheral>
       <name>GPIOSD</name>
       <description>Peripheral GPIOSD</description>
+      <groupName>GPIOSD</groupName>
       <baseAddress>0x60004f00</baseAddress>
       <registers>
         <register>
@@ -9505,6 +10898,7 @@
     <peripheral>
       <name>HMAC</name>
       <description>Peripheral HMAC</description>
+      <groupName>HMAC</groupName>
       <baseAddress>0x6003e000</baseAddress>
       <registers>
         <register>
@@ -9764,6 +11158,7 @@
     <peripheral>
       <name>I2C</name>
       <description>Peripheral I2C</description>
+      <groupName>I2C</groupName>
       <baseAddress>0x60013000</baseAddress>
       <registers>
         <register>
@@ -10985,6 +12380,7 @@
     <peripheral>
       <name>I2S</name>
       <description>Peripheral I2S</description>
+      <groupName>I2S</groupName>
       <baseAddress>0x6002d000</baseAddress>
       <registers>
         <register>
@@ -12117,6 +13513,7 @@
     <peripheral>
       <name>INTERRUPT_CORE0</name>
       <description>Peripheral INTERRUPT_CORE0</description>
+      <groupName>INTERRUPT_CORE0</groupName>
       <baseAddress>0x600c2000</baseAddress>
       <registers>
         <register>
@@ -13571,6 +14968,7 @@
     <peripheral>
       <name>IO_MUX</name>
       <description>Peripheral IO_MUX</description>
+      <groupName>IO_MUX</groupName>
       <baseAddress>0x60009000</baseAddress>
       <registers>
         <register>
@@ -13697,6 +15095,7 @@
     <peripheral>
       <name>LEDC</name>
       <description>Peripheral LEDC</description>
+      <groupName>LEDC</groupName>
       <baseAddress>0x60019000</baseAddress>
       <registers>
         <register>
@@ -15257,6 +16656,7 @@
     <peripheral>
       <name>RMT</name>
       <description>Peripheral RMT</description>
+      <groupName>RMT</groupName>
       <baseAddress>0x60016000</baseAddress>
       <registers>
         <register>
@@ -16698,6 +18098,7 @@
     <peripheral>
       <name>RSA</name>
       <description>Peripheral RSA</description>
+      <groupName>RSA</groupName>
       <baseAddress>0x6003c000</baseAddress>
       <registers>
         <register>
@@ -16919,6 +18320,7 @@
     <peripheral>
       <name>RTC_CNTL</name>
       <description>Peripheral RTC_CNTL</description>
+      <groupName>RTC_CNTL</groupName>
       <baseAddress>0x60008000</baseAddress>
       <registers>
         <register>
@@ -18436,7 +19838,7 @@
           </fields>
         </register>
         <register>
-          <name>RTC_REG</name>
+          <name>RTC</name>
           <description>rtc configure register</description>
           <addressOffset>0x80</addressOffset>
           <size>32</size>
@@ -18455,25 +19857,25 @@
               <bitWidth>8</bitWidth>
             </field>
             <field>
-              <name>RTC_DBOOST_FORCE_PD</name>
+              <name>DBOOST_FORCE_PD</name>
               <description>RTC_DBOOST force power down</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>RTC_DBOOST_FORCE_PU</name>
+              <name>DBOOST_FORCE_PU</name>
               <description>RTC_DBOOST force power up</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>RTC_REGULATOR_FORCE_PD</name>
+              <name>REGULATOR_FORCE_PD</name>
               <description>RTC_REG force power down (for RTC_REG power down means decrease the voltage to 0.8v or lower )</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>RTC_REGULATOR_FORCE_PU</name>
+              <name>REGULATOR_FORCE_PU</name>
               <description>RTC_REG force power up</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
@@ -20096,6 +21498,7 @@
     <peripheral>
       <name>SENSITIVE</name>
       <description>Peripheral SENSITIVE</description>
+      <groupName>SENSITIVE</groupName>
       <baseAddress>0x600c1000</baseAddress>
       <registers>
         <register>
@@ -23295,8 +24698,8 @@
           </fields>
         </register>
         <register>
-          <name>CLOCK_GATE_REG</name>
-          <description>SENSITIVE_CLOCK_GATE_REG_REG</description>
+          <name>CLOCK_GATE</name>
+          <description>SENSITIVE_CLOCK_GATE_REG</description>
           <addressOffset>0x170</addressOffset>
           <size>32</size>
           <resetValue>0x1</resetValue>
@@ -23329,6 +24732,7 @@
     <peripheral>
       <name>SHA</name>
       <description>Peripheral SHA</description>
+      <groupName>SHA</groupName>
       <baseAddress>0x6003b000</baseAddress>
       <registers>
         <register>
@@ -23523,6 +24927,7 @@
     <peripheral>
       <name>SPI0</name>
       <description>Peripheral SPI0</description>
+      <groupName>SPI0</groupName>
       <baseAddress>0x60003000</baseAddress>
       <registers>
         <register>
@@ -24091,6 +25496,7 @@
     <peripheral>
       <name>SPI1</name>
       <description>Peripheral SPI1</description>
+      <groupName>SPI1</groupName>
       <baseAddress>0x60002000</baseAddress>
       <registers>
         <register>
@@ -25329,6 +26735,7 @@
     <peripheral>
       <name>SPI2</name>
       <description>Peripheral SPI2</description>
+      <groupName>SPI2</groupName>
       <baseAddress>0x60024000</baseAddress>
       <registers>
         <register>
@@ -26941,6 +28348,7 @@
     <peripheral>
       <name>SYSTEM</name>
       <description>Peripheral SYSTEM</description>
+      <groupName>SYSTEM</groupName>
       <baseAddress>0x600c0000</baseAddress>
       <registers>
         <register>
@@ -26985,7 +28393,7 @@
           </fields>
         </register>
         <register>
-          <name>CPU_PER_CONF_REG</name>
+          <name>CPU_PER_CONF</name>
           <description>cpu clock config register</description>
           <addressOffset>0x8</addressOffset>
           <size>32</size>
@@ -27018,7 +28426,7 @@
           </fields>
         </register>
         <register>
-          <name>MEM_PD_MASK_REG</name>
+          <name>MEM_PD_MASK</name>
           <description>memory power down mask register</description>
           <addressOffset>0xc</addressOffset>
           <size>32</size>
@@ -27638,7 +29046,7 @@
           </fields>
         </register>
         <register>
-          <name>CPU_INTR_FROM_CPU_0_REG</name>
+          <name>CPU_INTR_FROM_CPU_0</name>
           <description>interrupt generate register</description>
           <addressOffset>0x28</addressOffset>
           <size>32</size>
@@ -27652,7 +29060,7 @@
           </fields>
         </register>
         <register>
-          <name>CPU_INTR_FROM_CPU_1_REG</name>
+          <name>CPU_INTR_FROM_CPU_1</name>
           <description>interrupt generate register</description>
           <addressOffset>0x2c</addressOffset>
           <size>32</size>
@@ -27666,7 +29074,7 @@
           </fields>
         </register>
         <register>
-          <name>CPU_INTR_FROM_CPU_2_REG</name>
+          <name>CPU_INTR_FROM_CPU_2</name>
           <description>interrupt generate register</description>
           <addressOffset>0x30</addressOffset>
           <size>32</size>
@@ -27680,7 +29088,7 @@
           </fields>
         </register>
         <register>
-          <name>CPU_INTR_FROM_CPU_3_REG</name>
+          <name>CPU_INTR_FROM_CPU_3</name>
           <description>interrupt generate register</description>
           <addressOffset>0x34</addressOffset>
           <size>32</size>
@@ -27694,7 +29102,7 @@
           </fields>
         </register>
         <register>
-          <name>RSA_PD_CTRL_REG</name>
+          <name>RSA_PD_CTRL</name>
           <description>rsa memory power control register</description>
           <addressOffset>0x38</addressOffset>
           <size>32</size>
@@ -27721,7 +29129,7 @@
           </fields>
         </register>
         <register>
-          <name>EDMA_CTRL_REG</name>
+          <name>EDMA_CTRL</name>
           <description>edma clcok and reset register</description>
           <addressOffset>0x3c</addressOffset>
           <size>32</size>
@@ -27877,7 +29285,7 @@
           </fields>
         </register>
         <register>
-          <name>CLOCK_GATE_REG</name>
+          <name>CLOCK_GATE</name>
           <description>clock gating register</description>
           <addressOffset>0x54</addressOffset>
           <size>32</size>
@@ -28251,6 +29659,7 @@
     <peripheral>
       <name>SYSTIMER</name>
       <description>Peripheral SYSTIMER</description>
+      <groupName>SYSTIMER</groupName>
       <baseAddress>0x60023000</baseAddress>
       <registers>
         <register>
@@ -28856,12 +30265,13 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>TIMG</name>
+      <name>TIMG0</name>
       <description>Peripheral TIMG</description>
-      <baseAddress>0x0</baseAddress>
+      <groupName>TIMG</groupName>
+      <baseAddress>0x6001f000</baseAddress>
       <registers>
         <register>
-          <name>T0CONFIG_REG</name>
+          <name>T0CONFIG</name>
           <description>TIMG_T0CONFIG_REG.</description>
           <addressOffset>0x0</addressOffset>
           <size>32</size>
@@ -28914,7 +30324,7 @@
           </fields>
         </register>
         <register>
-          <name>T0LO_REG</name>
+          <name>T0LO</name>
           <description>TIMG_T0LO_REG.</description>
           <addressOffset>0x4</addressOffset>
           <size>32</size>
@@ -28929,7 +30339,7 @@
           </fields>
         </register>
         <register>
-          <name>T0HI_REG</name>
+          <name>T0HI</name>
           <description>TIMG_T0HI_REG.</description>
           <addressOffset>0x8</addressOffset>
           <size>32</size>
@@ -28944,7 +30354,7 @@
           </fields>
         </register>
         <register>
-          <name>T0UPDATE_REG</name>
+          <name>T0UPDATE</name>
           <description>TIMG_T0UPDATE_REG.</description>
           <addressOffset>0xc</addressOffset>
           <size>32</size>
@@ -28959,7 +30369,7 @@
           </fields>
         </register>
         <register>
-          <name>T0ALARMLO_REG</name>
+          <name>T0ALARMLO</name>
           <description>TIMG_T0ALARMLO_REG.</description>
           <addressOffset>0x10</addressOffset>
           <size>32</size>
@@ -28973,7 +30383,7 @@
           </fields>
         </register>
         <register>
-          <name>T0ALARMHI_REG</name>
+          <name>T0ALARMHI</name>
           <description>TIMG_T0ALARMHI_REG.</description>
           <addressOffset>0x14</addressOffset>
           <size>32</size>
@@ -28987,7 +30397,7 @@
           </fields>
         </register>
         <register>
-          <name>T0LOADLO_REG</name>
+          <name>T0LOADLO</name>
           <description>TIMG_T0LOADLO_REG.</description>
           <addressOffset>0x18</addressOffset>
           <size>32</size>
@@ -29001,7 +30411,7 @@
           </fields>
         </register>
         <register>
-          <name>T0LOADHI_REG</name>
+          <name>T0LOADHI</name>
           <description>TIMG_T0LOADHI_REG.</description>
           <addressOffset>0x1c</addressOffset>
           <size>32</size>
@@ -29015,7 +30425,7 @@
           </fields>
         </register>
         <register>
-          <name>T0LOAD_REG</name>
+          <name>T0LOAD</name>
           <description>TIMG_T0LOAD_REG.</description>
           <addressOffset>0x20</addressOffset>
           <size>32</size>
@@ -29030,7 +30440,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTCONFIG0_REG</name>
+          <name>WDTCONFIG0</name>
           <description>TIMG_WDTCONFIG0_REG.</description>
           <addressOffset>0x48</addressOffset>
           <size>32</size>
@@ -29112,7 +30522,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTCONFIG1_REG</name>
+          <name>WDTCONFIG1</name>
           <description>TIMG_WDTCONFIG1_REG.</description>
           <addressOffset>0x4c</addressOffset>
           <size>32</size>
@@ -29134,7 +30544,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTCONFIG2_REG</name>
+          <name>WDTCONFIG2</name>
           <description>TIMG_WDTCONFIG2_REG.</description>
           <addressOffset>0x50</addressOffset>
           <size>32</size>
@@ -29149,7 +30559,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTCONFIG3_REG</name>
+          <name>WDTCONFIG3</name>
           <description>TIMG_WDTCONFIG3_REG.</description>
           <addressOffset>0x54</addressOffset>
           <size>32</size>
@@ -29164,7 +30574,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTCONFIG4_REG</name>
+          <name>WDTCONFIG4</name>
           <description>TIMG_WDTCONFIG4_REG.</description>
           <addressOffset>0x58</addressOffset>
           <size>32</size>
@@ -29179,7 +30589,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTCONFIG5_REG</name>
+          <name>WDTCONFIG5</name>
           <description>TIMG_WDTCONFIG5_REG.</description>
           <addressOffset>0x5c</addressOffset>
           <size>32</size>
@@ -29194,7 +30604,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTFEED_REG</name>
+          <name>WDTFEED</name>
           <description>TIMG_WDTFEED_REG.</description>
           <addressOffset>0x60</addressOffset>
           <size>32</size>
@@ -29209,7 +30619,7 @@
           </fields>
         </register>
         <register>
-          <name>WDTWPROTECT_REG</name>
+          <name>WDTWPROTECT</name>
           <description>TIMG_WDTWPROTECT_REG.</description>
           <addressOffset>0x64</addressOffset>
           <size>32</size>
@@ -29224,7 +30634,7 @@
           </fields>
         </register>
         <register>
-          <name>RTCCALICFG_REG</name>
+          <name>RTCCALICFG</name>
           <description>TIMG_RTCCALICFG_REG.</description>
           <addressOffset>0x68</addressOffset>
           <size>32</size>
@@ -29264,7 +30674,7 @@
           </fields>
         </register>
         <register>
-          <name>RTCCALICFG1_REG</name>
+          <name>RTCCALICFG1</name>
           <description>TIMG_RTCCALICFG1_REG.</description>
           <addressOffset>0x6c</addressOffset>
           <size>32</size>
@@ -29286,7 +30696,7 @@
           </fields>
         </register>
         <register>
-          <name>INT_ENA_TIMG_REG</name>
+          <name>INT_ENA_TIMG</name>
           <description>INT_ENA_TIMG_REG</description>
           <addressOffset>0x70</addressOffset>
           <size>32</size>
@@ -29306,7 +30716,7 @@
           </fields>
         </register>
         <register>
-          <name>INT_RAW_TIMG_REG</name>
+          <name>INT_RAW_TIMG</name>
           <description>INT_RAW_TIMG_REG</description>
           <addressOffset>0x74</addressOffset>
           <size>32</size>
@@ -29328,7 +30738,7 @@
           </fields>
         </register>
         <register>
-          <name>INT_ST_TIMG_REG</name>
+          <name>INT_ST_TIMG</name>
           <description>INT_ST_TIMG_REG</description>
           <addressOffset>0x78</addressOffset>
           <size>32</size>
@@ -29350,7 +30760,7 @@
           </fields>
         </register>
         <register>
-          <name>INT_CLR_TIMG_REG</name>
+          <name>INT_CLR_TIMG</name>
           <description>INT_CLR_TIMG_REG</description>
           <addressOffset>0x7c</addressOffset>
           <size>32</size>
@@ -29372,7 +30782,7 @@
           </fields>
         </register>
         <register>
-          <name>RTCCALICFG2_REG</name>
+          <name>RTCCALICFG2</name>
           <description>TIMG_RTCCALICFG2_REG.</description>
           <addressOffset>0x80</addressOffset>
           <size>32</size>
@@ -29400,7 +30810,7 @@
           </fields>
         </register>
         <register>
-          <name>NTIMG_DATE_REG</name>
+          <name>NTIMG_DATE</name>
           <description>TIMG_NTIMG_DATE_REG.</description>
           <addressOffset>0xf8</addressOffset>
           <size>32</size>
@@ -29415,7 +30825,7 @@
           </fields>
         </register>
         <register>
-          <name>REGCLK_REG</name>
+          <name>REGCLK</name>
           <description>TIMG_REGCLK_REG.</description>
           <addressOffset>0xfc</addressOffset>
           <size>32</size>
@@ -29443,18 +30853,15 @@
         </register>
       </registers>
     </peripheral>
-    <peripheral derivedFrom="TIMG">
-      <name>TIMG0</name>
-      <baseAddress>0x6001f000</baseAddress>
-    </peripheral>
-    <peripheral derivedFrom="TIMG">
+    <peripheral derivedFrom="TIMG0">
       <name>TIMG1</name>
       <baseAddress>0x60020000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>UART</name>
+      <name>UART0</name>
       <description>Peripheral UART</description>
-      <baseAddress>0x0</baseAddress>
+      <groupName>UART</groupName>
+      <baseAddress>0x60000000</baseAddress>
       <registers>
         <register>
           <name>FIFO</name>
@@ -30926,18 +32333,15 @@
         </register>
       </registers>
     </peripheral>
-    <peripheral derivedFrom="UART">
-      <name>UART0</name>
-      <baseAddress>0x60000000</baseAddress>
-    </peripheral>
-    <peripheral derivedFrom="UART">
+    <peripheral derivedFrom="UART0">
       <name>UART1</name>
       <baseAddress>0x60010000</baseAddress>
     </peripheral>
     <peripheral>
-      <name>UHCI</name>
+      <name>UHCI0</name>
       <description>Peripheral UHCI</description>
-      <baseAddress>0x0</baseAddress>
+      <groupName>UHCI</groupName>
+      <baseAddress>0x60014000</baseAddress>
       <registers>
         <register>
           <name>CONF0</name>
@@ -31896,17 +33300,14 @@
         </register>
       </registers>
     </peripheral>
-    <peripheral derivedFrom="UHCI">
-      <name>UHCI0</name>
-      <baseAddress>0x60014000</baseAddress>
-    </peripheral>
-    <peripheral derivedFrom="UHCI">
+    <peripheral derivedFrom="UHCI0">
       <name>UHCI1</name>
       <baseAddress>0x6000c000</baseAddress>
     </peripheral>
     <peripheral>
       <name>USB_DEVICE</name>
       <description>Peripheral USB_DEVICE</description>
+      <groupName>USB_DEVICE</groupName>
       <baseAddress>0x60043000</baseAddress>
       <registers>
         <register>
@@ -32776,6 +34177,7 @@
     <peripheral>
       <name>XTS_AES</name>
       <description>Peripheral XTS_AES</description>
+      <groupName>XTS_AES</groupName>
       <baseAddress>0x600cc000</baseAddress>
       <registers>
         <register>
